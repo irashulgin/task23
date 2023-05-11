@@ -1,15 +1,13 @@
 # First step :
  
-1 npm install
+ npm install
 
 
 In the project directory, you can run:
 
+ 
 
-2 start-server
- server is running on port 3000
-
-3 npm start
+### npm start
 
  There is a list of items, the user can add/remove item to/from wishlist by press on the buttom in the top right corner of the item box.
  Also user can check the list of selected items and remove them from there.
