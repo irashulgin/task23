@@ -36,8 +36,6 @@ export const Header: FC = () => {
 
       {!wishListVisible ? (
         <h6 className={styleCss["search-wrapper"]}>
-          <i className="bi bi-search"></i>
-
           <input
             id="namedInput"
             type="text"
