@@ -2,8 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import { PRODUCT } from "../../../interfaces";
 
 const getLocalData = () => {
-if(localStorage.getItem("wishList")) {
-  return JSON.parse(localStorage.getItem("wishList")!);
+try {
+  if(localStorage.getItem("wishList")) {
+    return JSON.parse(localStorage.getItem("wishList")!);
+  } 
+}
+catch(e) {
+  console.log(e);
 }
 return [];
 };
