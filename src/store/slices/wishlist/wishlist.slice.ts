@@ -27,18 +27,30 @@ export const wishlist = createSlice({
     updateData(state, action) {
       state.data.push(action.payload.item);
       const data = JSON.parse(JSON.stringify(state.data));
-      localStorage.setItem("wishList", JSON.stringify(data));
+      try {
+        localStorage.setItem("wishList", JSON.stringify(data));
+      } catch(e) {
+        console.log(e);
+      }
     },
     removeAllFromList(state) {
       state.data = [];
-      localStorage.setItem("wishList", "");
+      try {
+        localStorage.setItem("wishList", "");
+      } catch(e) {
+        console.log(e);
+      }
     },
     removeFromList(state, action) {
       const data = JSON.parse(JSON.stringify(state.data)).filter(
         (item: PRODUCT) => item.id != action.payload.item.id
       );
       state.data = data;
-      localStorage.setItem("wishList", JSON.stringify(data));
+      try {
+        localStorage.setItem("wishList", JSON.stringify(data));
+      } catch(e) {
+        console.log(e);
+      }
     },
     updateVisible(state, action) {
       state.visible = action.payload;
