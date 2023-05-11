@@ -2,13 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import { PRODUCT } from "../../../interfaces";
 
 const getLocalData = () => {
+if(localStorage.getItem("wishList")) {
   return JSON.parse(localStorage.getItem("wishList")!);
+}
+return [];
 };
 const initialState: {
   data: PRODUCT[];
   visible: boolean;
 } = {
-  data: getLocalData() || [],
+  data: getLocalData(),
   visible: false,
 };
 
